@@ -9,16 +9,17 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { format } from "date-fns";
+import { addDays, format } from "date-fns";
 import QuoteButton from "@/components/quoteButton";
 import Airtable from "airtable";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useGodlyContext } from "@/context/godlyContext";
 
 const servicesList = [
   { id: "exterior-window-cleaning", name: "Exterior Window Cleaning" },
   { id: "house-washing", name: "House Washing" },
-  { id: "seal-pavers", name: "Seal Pavers" },
+  { id: "paver-sealing", name: "Paver Sealing" },
   // { id: "screen-cleaning", name: "Screen Cleaning" },
   // { id: "interior-window-cleaning", name: "Interior Window Cleaning" },
   { id: "roof-washing", name: "Roof Washing" },
@@ -29,6 +30,163 @@ const servicesList = [
 ];
 
 export default function QuoteForm({ isDialog }) {
+  const { city } = useGodlyContext();
+  
+  // City-specific form content
+  const getFormContent = () => {
+    if (city === "PARKLAND") {
+      return {
+        heading: "Need a quick estimate?",
+        description: "Receive a call within 30 minutes during normal business hours."
+      };
+    }
+    if (city === "MIAMI") {
+      return {
+        heading: "Need a quick estimate?",
+        description: "Receive a call within 30 minutes during normal business hours."
+      };
+    }
+    if (city === "FORT LAUDERDALE") {
+      return {
+        heading: "Need a quick estimate?",
+        description: "Receive a call within 30 minutes during normal business hours."
+      };
+    }
+    if (city === "LIGHTHOUSE POINT") {
+      return {
+        heading: "Need a quick estimate?",
+        description: "Receive a call within 30 minutes during normal business hours."
+      };
+    }
+    if (city === "SOUTHWEST RANCHES") {
+      return {
+        heading: "Need a quick estimate?",
+        description: "Receive a call within 30 minutes during normal business hours."
+      };
+    }
+    if (city === "CORAL SPRINGS") {
+      return {
+        heading: "Need a quick estimate?",
+        description: "Receive a call within 30 minutes during normal business hours."
+      };
+    }
+    if (city === "HALLANDALE BEACH") {
+      return {
+        heading: "Need a quick estimate?",
+        description: "Receive a call within 30 minutes during normal business hours."
+      };
+    }
+    if (city === "MARGATE") {
+      return {
+        heading: "Need a quick estimate?",
+        description: "Receive a call within 30 minutes during normal business hours."
+      };
+    }
+    if (city === "PEMBROKE PINES") {
+      return {
+        heading: "Need a quick estimate?",
+        description: "Receive a call within 30 minutes during normal business hours."
+      };
+    }
+    if (city === "SUNRISE") {
+      return {
+        heading: "Need a quick estimate?",
+        description: "Receive a call within 30 minutes during normal business hours."
+      };
+    }
+    if (city === "DAVIE") {
+      return {
+        heading: "Need a quick estimate?",
+        description: "Receive a call within 30 minutes during normal business hours."
+      };
+    }
+    if (city === "DELRAY BEACH") {
+      return {
+        heading: "Need a quick estimate?",
+        description: "Receive a call within 30 minutes during normal business hours."
+      };
+    }
+    if (city === "HILLSBORO BEACH") {
+      return {
+        heading: "Need a quick estimate?",
+        description: "Receive a call within 30 minutes during normal business hours."
+      };
+    }
+    if (city === "PLANTATION") {
+      return {
+        heading: "Need a quick estimate?",
+        description: "Receive a call within 30 minutes during normal business hours."
+      };
+    }
+    if (city === "TAMARAC") {
+      return {
+        heading: "Need a quick estimate?",
+        description: "Receive a call within 30 minutes during normal business hours."
+      };
+    }
+    if (city === "DEERFIELD BEACH") {
+      return {
+        heading: "Need a quick estimate?",
+        description: "Receive a call within 30 minutes during normal business hours."
+      };
+    }
+    if (city === "HOLLYWOOD") {
+      return {
+        heading: "Need a quick estimate?",
+        description: "Receive a call within 30 minutes during normal business hours."
+      };
+    }
+    if (city === "MIRAMAR") {
+      return {
+        heading: "Need a quick estimate?",
+        description: "Receive a call within 30 minutes during normal business hours."
+      };
+    }
+    if (city === "POMPANO BEACH") {
+      return {
+        heading: "Need a quick estimate?",
+        description: "Receive a call within 30 minutes during normal business hours."
+      };
+    }
+    if (city === "WEST PALM BEACH") {
+      return {
+        heading: "Need a quick estimate?",
+        description: "Receive a call within 30 minutes during normal business hours."
+      };
+    }
+    if (city === "LAUDERDALE-BY-THE-SEA") {
+      return {
+        heading: "Need a quick estimate?",
+        description: "Receive a call within 30 minutes during normal business hours."
+      };
+    }
+    if (city === "OAKLAND PARK") {
+      return {
+        heading: "Need a quick estimate?",
+        description: "Receive a call within 30 minutes during normal business hours."
+      };
+    }
+    if (city === "WESTON") {
+      return {
+        heading: "Need a quick estimate?",
+        description: "Receive a call within 30 minutes during normal business hours."
+      };
+    }
+    if (city === "ROYAL PALM BEACH") {
+      return {
+        heading: "Need a quick estimate?",
+        description: "Receive a call within 30 minutes during normal business hours."
+      };
+    }
+    
+    // Default content
+    return {
+      heading: "LET US CALL YOU!",
+      description: "Receive a call within 30 minutes during normal business hours."
+    };
+  };
+  
+  const formContent = getFormContent();
   const [date, setDate] = useState();
   const [formData, setFormData] = useState({
     name: "",
@@ -68,12 +226,45 @@ export default function QuoteForm({ isDialog }) {
       "patUUfkvMZUeWcpBx.3b8a637c96292840817c1a291c161b70a0b5952d6a75d9ab0f000bb70a097e51",
   }).base("appzgFLd0zSxa5rIx");
 
+  const formatPhoneNumber = (value) => {
+    // Remove all non-digits
+    const phoneNumber = value.replace(/\D/g, "");
+
+    // Format as xxx-xxx-xxxx
+    if (phoneNumber.length >= 6) {
+      return `${phoneNumber.slice(0, 3)}-${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6, 10)}`;
+    } else if (phoneNumber.length >= 3) {
+      return `${phoneNumber.slice(0, 3)}-${phoneNumber.slice(3)}`;
+    }
+    return phoneNumber;
+  };
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: type === "checkbox" ? checked : value,
-    }));
+
+    // Track form interaction on first input
+    if (name === "name" && value.length === 1) {
+      if (typeof window !== "undefined" && window.gtag) {
+        window.gtag("event", "quote_form_started", {
+          event_category: "engagement",
+          event_label: "Quote Form Started",
+          form_location: "main_page",
+        });
+      }
+    }
+
+    if (name === "phone") {
+      const formattedPhone = formatPhoneNumber(value);
+      setFormData((prev) => ({
+        ...prev,
+        phone: formattedPhone,
+      }));
+    } else {
+      setFormData((prev) => ({
+        ...prev,
+        [name]: type === "checkbox" ? checked : value,
+      }));
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -106,6 +297,76 @@ export default function QuoteForm({ isDialog }) {
         },
       ]);
 
+      await fetch(
+        "https://hook.us1.make.com/r3kgolabx4r2luoyc39npw095bbtytl7",
+        {
+          method: "POST",
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            service: formData.services,
+            date: date ? format(date, "MM/dd/yyyy") : null,
+            zipcode: formData.zipcode,
+            source: "Organic",
+            pageUrl: typeof window !== "undefined" ? window.location.href : null,
+          }),
+        },
+      );
+
+      await fetch(
+        "https://hook.us1.make.com/ivm6g245bvvfk1k72ygb9lq83dubrl4m",
+        {
+          method: "POST",
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            service: formData.services,
+            date: date ? format(date, "MM/dd/yyyy") : null,
+            zipcode: formData.zipcode,
+            utm_source: "organic",
+            pageUrl: typeof window !== "undefined" ? window.location.href : null,
+          }),
+        },
+      );
+
+      await fetch(
+        "https://hook.us1.make.com/la9l4g93iz98xumdx4ecptc3ji7t4pux",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            services: formData.services,
+            date: date ? format(date, "MM/dd/yyyy") : null,
+            zipcode: formData.zipcode,
+            pageUrl: typeof window !== "undefined" ? window.location.href : null,
+          }),
+        },
+      );
+
+      if (typeof window !== "undefined" && window.gtag) {
+        const gtag = window.gtag;
+
+        gtag("event", "quote_form_submission", {
+          event_category: "engagement",
+          event_label: "Quote Form Submission",
+          value: 1,
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          services: [formData.services],
+          date: date ? format(date, "MM/dd/yyyy") : null,
+          zipcode: formData.zipcode,
+          source: "organic",
+        });
+      }
+
       setSubmitStatus("success");
       setShowSuccessDialog(true);
 
@@ -118,7 +379,7 @@ export default function QuoteForm({ isDialog }) {
         zipcode: "",
         agree: false,
       });
-      setDate(new Date());
+      setDate(undefined);
     } catch (error) {
       console.error("Error submitting to Airtable:", error);
       setSubmitStatus("error");
@@ -169,7 +430,7 @@ export default function QuoteForm({ isDialog }) {
                 : "",
             )}
           >
-            LET US CALL <br className="md:hidden" /> YOU!
+            {formContent.heading}
           </h2>
           <p
             className={cn(
@@ -179,9 +440,7 @@ export default function QuoteForm({ isDialog }) {
                 : "",
             )}
           >
-            Receive a call within 30 minutes
-            <br className="hidden md:block xl:block" /> during normal business
-            hours.
+            {formContent.description}
           </p>
         </div>
 
@@ -241,7 +500,7 @@ export default function QuoteForm({ isDialog }) {
                 e.preventDefault();
                 setShowServices(!showServices);
               }}
-              className="w-full rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 pb-3 text-base focus-visible:ring-0 md:text-xl xl:text-2xl"
+              className="w-full rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 pb-[15px] text-base focus-visible:ring-0 md:text-xl xl:text-2xl"
             >
               <div className="flex w-full items-center space-x-2">
                 <p className="overflow-hidden text-ellipsis whitespace-nowrap">
@@ -344,6 +603,7 @@ export default function QuoteForm({ isDialog }) {
                   mode="single"
                   selected={date}
                   onSelect={setDate}
+                  disabled={(date) => date < addDays(new Date(), -1)}
                   initialFocus
                 />
               </PopoverContent>
@@ -351,7 +611,7 @@ export default function QuoteForm({ isDialog }) {
           </div>
 
           <div className="md:col-span-1 xl:col-span-2">
-            <label className="mb-1 block pb-2 font-sans text-sm font-normal text-[#312E2C] md:text-sm xl:text-base">
+            <label className="mb-1 block w-full pb-3 font-sans text-sm font-normal text-[#312E2C] md:text-sm xl:text-base">
               Zip Code
             </label>
             <Input
@@ -359,7 +619,7 @@ export default function QuoteForm({ isDialog }) {
               placeholder="YOUR ZIP CODE"
               value={formData.zipcode}
               onChange={handleChange}
-              className="rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 pb-3 text-base focus-visible:ring-0 md:text-xl xl:text-2xl"
+              className="w-full rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 pb-3 text-base focus-visible:ring-0 md:text-xl xl:text-2xl"
               required
             />
           </div>
@@ -433,7 +693,7 @@ export default function QuoteForm({ isDialog }) {
             </p>
             <button
               onClick={() => setShowSuccessDialog(false)}
-              className="rounded-md bg-[#2D2B2B] px-8 py-2 font-semibold text-white shadow transition-all hover:bg-[#1c1a1a]"
+              className="trim rounded-md bg-[#2D2B2B] px-8 py-4 font-semibold text-white shadow transition-all hover:bg-[#1c1a1a]"
             >
               DONE
             </button>

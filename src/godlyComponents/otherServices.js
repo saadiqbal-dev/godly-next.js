@@ -5,6 +5,7 @@ import Link from "next/link";
 import "@/styles/fourstepprocess.css";
 import Image from "next/image";
 import { citiesMap } from "./header/CitiesPopup";
+import { generateServiceHeroAlt } from "@/data/metaTitles";
 
 import service10 from "@/assets/serviceData/service10.webp";
 import service12 from "@/assets/serviceData/service12.webp";
@@ -15,25 +16,25 @@ const steps = [
   {
     number: "01",
     title: "Screen Cleaning",
-    link: "screen_cleans",
+    link: "screen-cleaning",
     Image: service10,
   },
   {
     number: "02",
     title: "Exterior Window Cleaning",
-    link: "exterior_windows",
+    link: "exterior-window-cleaning",
     Image: service2,
   },
   {
     number: "03",
     title: "SKYLIGHT CLEANING",
-    link: "skylights",
+    link: "skylight-cleaning",
     Image: service9,
   },
   {
     number: "04",
     title: "HIGH DUSTING",
-    link: "high_dusting",
+    link: "high-dusting",
     Image: service12,
   },
 ];
@@ -43,6 +44,7 @@ const OtherServices = () => {
   const [activeCard, setActiveCard] = useState(null);
 
   const cityKey = Object.keys(citiesMap).find((key) => citiesMap[key] === city);
+  const cityName = citiesMap[cityKey];
 
   const handleCardClick = (index, e) => {
     if (activeCard !== index) {
@@ -85,7 +87,7 @@ const OtherServices = () => {
                 <Image
                   src={step.Image}
                   style={{ objectFit: "cover" }}
-                  alt="window"
+                  alt={generateServiceHeroAlt(step.link, cityName)}
                   width={500}
                   height={500}
                   className="h-full max-h-[145px] min-h-[145px] w-full object-cover md:max-h-[223px] md:min-h-[223px]"

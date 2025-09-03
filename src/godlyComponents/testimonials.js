@@ -16,16 +16,16 @@ const Testimonials = () => {
     <div className="paper-bg-16 bg-[#262424]">
       <div className="mx-auto flex max-w-[1440px] flex-col items-center gap-20 px-6 pb-[120px] md:px-6 md:py-25">
         <div className="flex w-full flex-col gap-[63px] md:relative md:flex-row md:items-end md:justify-center">
-          <div className="flex flex-col items-center justify-center gap-6 md:gap-6">
+          <div className="flex flex-col items-center justify-center gap-6 md:gap-9">
             <div className="flex items-end gap-6">
-              <h1 className="trim md:text-trim text-[32px] tracking-wider text-[#FFFFFF] md:text-[86px]">
+              <h4 className="trim md:text-trim text-[32px] tracking-wider text-[#FFFFFF] md:text-[86px]">
                 TRUSTED
-              </h1>
+              </h4>
               <h4 className="trim md:text-trim text-[22px] tracking-wider text-[#FDE4C8] md:text-3xl">
                 BY
               </h4>
             </div>
-            <h1 className="-mt-5 md:-mt-9">
+            <h2 className="-mt-5 md:-mt-9">
               <span
                 className="text-grain !bg-[#FDE4C8] font-['luminaire-script'] text-base md:mr-4 md:ps-2 md:pb-2 md:text-[64px] md:before:inset-0"
                 data-text="Your"
@@ -38,11 +38,11 @@ const Testimonials = () => {
               >
                 NEIGHBORS
               </span>
-            </h1>
+            </h2>
           </div>
           <Link
             className="flex justify-end text-base md:absolute md:right-0 md:block md:text-2xl"
-            href="#"
+            href="https://g.co/kgs/uCqteyx"
           >
             <span className="text-white underline">SEE MORE REVIEWS</span>
           </Link>
@@ -114,7 +114,7 @@ const reviews = [
     author: "Lilly Thomas",
     location: "Lighthouse Point, Fl",
     content:
-      "Extremely pleased with the results of my windows. They were very professional and informative. I highly recommend Moses Godly Windows!",
+      "Amazing Job! Moses is very conscientious and always provides top quality service.",
     image: "/assets/lily.png",
   },
   {
@@ -128,14 +128,14 @@ const reviews = [
     author: "Heather Roach",
     location: "Ft. Lauderdale, Fl",
     content:
-      "The window washing service was prompt, professional, and left every pane sparkling clean. They paid attention to detail and even cleaned hard-to-reach areas without any streaks. I’m impressed with the results and would definitely hire them again! 🙌",
+      "The window washing service was prompt, professional, and left every pane sparkling clean. They paid attention to detail and even cleaned hard-to-reach areas without any streaks. I'm impressed with the results and would definitely hire them again! 🙌",
     image: "/assets/heather.png",
   },
   {
     author: "Phillip Smoak",
     location: "Parkland, Fl",
     content:
-      "These guys are amazing. They clean our windows every three months and always do a great job. It’s not easy finding great honest work, super glad I found them.",
+      "These guys are amazing. They clean our windows every three months and always do a great job. It's not easy finding great honest work, super glad I found them.",
     image: "/assets/phillip.png",
   },
   {
@@ -149,13 +149,13 @@ const reviews = [
     author: "Daniela D",
     location: "Boca Raton, Fl",
     content:
-      "The best window company I’ve used. Was referred by a friend and they did a great job. The one thing I loved was how they use something on the glass so that my windows barely get wet when it rains. Just call them and you’ll see why I’m leaving a review. Great guys.",
+      "The best window company I've used. Was referred by a friend and they did a great job. The one thing I loved was how they use something on the glass so that my windows barely get wet when it rains. Just call them and you'll see why I'm leaving a review. Great guys.",
     image: "/assets/daniela.png",
   },
   {
     author: "Kelly Grana-Barton",
     location: "Ft. Lauderdale, Fl",
-    content: "The best!!! Don’t call anyone else for window washing.",
+    content: "The best!!! Don't call anyone else for window washing.",
     image: "/assets/kelly.png",
   },
   {

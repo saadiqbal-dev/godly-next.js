@@ -12,12 +12,12 @@ import service11 from "@/assets/serviceData/service11.webp";
 import service12 from "@/assets/serviceData/service12.webp";
 
 const Services = {
-  solar_panels: {
+  "solar-panel-cleaning": {
     hero: [
       "Solar Panel",
       "Cleaning",
       service1,
-      "Dirty solar panels reduce energy efficiency by blocking sunlight absorption. Our solar panel cleaning service ensures maximum performance by carefully removing all of nature’s buildup that can affect energy output. Regular cleaning helps maintain optimal energy production.",
+      "Dirty solar panels reduce energy efficiency by blocking sunlight absorption. Our solar panel cleaning service ensures maximum performance by carefully removing all of nature's buildup that can affect energy output. Regular cleaning helps maintain optimal energy production.",
     ],
     included: [
       {
@@ -93,7 +93,7 @@ const Services = {
     quote:
       "Maximize energy Efficiency with our professional solar panel cleaning services.",
   },
-  exterior_windows: {
+  "exterior-window-cleaning": {
     hero: [
       "Exterior Window",
       "Cleaning",
@@ -141,7 +141,7 @@ const Services = {
       {
         number: "03.",
         title: "Enjoy Unobstructed Views",
-        text: "Whether it’s the ocean, the skyline, or your garden, clean windows give you a crystal-clear view, free from streaks or dust.",
+        text: "Whether it's the ocean, the skyline, or your garden, clean windows give you a crystal-clear view, free from streaks or dust.",
       },
       {
         number: "04.",
@@ -157,7 +157,7 @@ const Services = {
       },
       {
         number: "02.",
-        title: "Commertial Window Cleaning",
+        title: "Commercial Window Cleaning",
         text: "Regular cleaning for stores, offices, restaurants, hotels, healthcare facilities, and schools to keep an inviting environment.",
       },
       {
@@ -179,7 +179,7 @@ const Services = {
     quote:
       "Maximize energy Efficiency with our professional solar panel cleaning services.",
   },
-  interior_windows: {
+  "interior-window-cleaning": {
     hero: [
       "Interior Window",
       "Cleaning",
@@ -217,7 +217,7 @@ const Services = {
       {
         number: "03.",
         title: "Enjoy Unobstructed Views",
-        text: "Whether it’s the ocean, the skyline, or your garden, clean windows give you a crystal-clear view, free from streaks or dust.",
+        text: "Whether it's the ocean, the skyline, or your garden, clean windows give you a crystal-clear view, free from streaks or dust.",
       },
     ],
     nearyou: [
@@ -228,7 +228,7 @@ const Services = {
       },
       {
         number: "02.",
-        title: "Commertial Window Cleaning",
+        title: "Commercial Window Cleaning",
         text: "Regular cleaning for stores, offices, restaurants, hotels, healthcare facilities, and schools to keep an inviting environment.",
       },
       {
@@ -250,7 +250,7 @@ const Services = {
     quote:
       "Maximize energy Efficiency with our professional solar panel cleaning services.",
   },
-  gutter_cleaning: {
+  "gutter-cleaning": {
     hero: [
       "Gutter",
       "Cleaning",
@@ -321,12 +321,12 @@ const Services = {
     quote:
       "Maximize energy Efficiency with our professional solar panel cleaning services.",
   },
-  house_washing: {
+  "house-washing": {
     hero: [
       "House",
       "Washing",
       service5,
-      "Over time, your home’s exterior accumulate layers of pollen, dirt, mold, and mildew, making it look old and run down. Our house washing service gently removes these contaminants using soft-washing techniques that clean effectively without damaging your home’s finish.",
+      "Over time, your home's exterior accumulate layers of pollen, dirt, mold, and mildew, making it look old and run down. Our house washing service gently removes these contaminants using soft-washing techniques that clean effectively without damaging your home's finish.",
     ],
     included: [
       {
@@ -391,7 +391,7 @@ const Services = {
       {
         number: "04",
         title: "Remove Mold & Mildew",
-        text: "Eliminate grime that damages your home’s exterior.",
+        text: "Eliminate grime that damages your home's exterior.",
       },
       {
         number: "05",
@@ -402,7 +402,7 @@ const Services = {
     quote:
       "Maximize energy Efficiency with our professional solar panel cleaning services.",
   },
-  roof_washing: {
+  "roof-washing": {
     hero: [
       "Roof",
       "Washing",
@@ -423,7 +423,7 @@ const Services = {
       {
         number: "03",
         title: "Dirt and Grime Eliminatio",
-        text: "Restores your roof’s original look.",
+        text: "Restores your roof's original look.",
       },
       {
         number: "04",
@@ -472,7 +472,7 @@ const Services = {
       {
         number: "04",
         title: "Remove Mold & Mildew ",
-        text: "Eliminate grime that damages your home’s exterior..",
+        text: "Eliminate grime that damages your home's exterior..",
       },
       {
         number: "05",
@@ -481,7 +481,7 @@ const Services = {
       },
     ],
   },
-  pressure_washing: {
+  "pressure-washing": {
     hero: [
       "Pressure",
       "Washing",
@@ -491,7 +491,7 @@ const Services = {
     included: [
       {
         number: "01",
-        title: "Pressure Washingfor Hard SurfaceS",
+        title: "Pressure Washing for Hard Surfaces",
         text: "emoves grime, algae, and stains from driveways, sidewalks, patios, and decks.",
       },
       {
@@ -560,7 +560,7 @@ const Services = {
       },
     ],
   },
-  seal_coating: {
+  "paver-sealing": {
     hero: [
       "Paver",
       "Sealing",
@@ -639,7 +639,7 @@ const Services = {
       },
     ],
   },
-  light_fixtures: {
+  "light-fixture-cleaning": {
     hero: [
       "Light Fixture",
       "Cleaning",
@@ -718,12 +718,12 @@ const Services = {
       },
     ],
   },
-  screen_cleans: {
+  "screen-cleaning": {
     hero: [
       "Screen",
       "Cleaning",
       service10,
-      "Dirty solar panels reduce energy efficiency by blocking sunlight absorption. Our solar panel cleaning service ensures maximum performance by carefully removing all of nature’s buildup that can affect energy output. Regular cleaning helps maintain optimal energy production.",
+      "Dirty solar panels reduce energy efficiency by blocking sunlight absorption. Our solar panel cleaning service ensures maximum performance by carefully removing all of nature's buildup that can affect energy output. Regular cleaning helps maintain optimal energy production.",
     ],
     included: [
       {
@@ -797,12 +797,12 @@ const Services = {
       },
     ],
   },
-  skylights: {
+  "skylight-cleaning": {
     hero: [
       "SkyLight",
       "Cleaning",
       service9,
-      "Dirty solar panels reduce energy efficiency by blocking sunlight absorption. Our solar panel cleaning service ensures maximum performance by carefully removing all of nature’s buildup that can affect energy output. Regular cleaning helps maintain optimal energy production.",
+      "Dirty solar panels reduce energy efficiency by blocking sunlight absorption. Our solar panel cleaning service ensures maximum performance by carefully removing all of nature's buildup that can affect energy output. Regular cleaning helps maintain optimal energy production.",
     ],
     included: [
       {
@@ -876,12 +876,12 @@ const Services = {
       },
     ],
   },
-  holiday_light_installation: {
+  "holiday-light-installation": {
     hero: [
       "Holiday Light",
       "Installation",
       service11,
-      "Dirty solar panels reduce energy efficiency by blocking sunlight absorption. Our solar panel cleaning service ensures maximum performance by carefully removing all of nature’s buildup that can affect energy output. Regular cleaning helps maintain optimal energy production.",
+      "Dirty solar panels reduce energy efficiency by blocking sunlight absorption. Our solar panel cleaning service ensures maximum performance by carefully removing all of nature's buildup that can affect energy output. Regular cleaning helps maintain optimal energy production.",
     ],
     included: [
       {
@@ -909,7 +909,7 @@ const Services = {
       {
         number: "01.",
         title: "Safety First – Skip the Ladder & Risk",
-        text: "We handle the heights and wiring so you don’t have to.",
+        text: "We handle the heights and wiring so you don't have to.",
       },
       {
         number: "02.",
@@ -919,12 +919,12 @@ const Services = {
       {
         number: "03.",
         title: "All-Inclusive – We Provide & Store the Lights",
-        text: "You don’t need to buy a thing. We supply premium lights, install them, and store them for next year.",
+        text: "You don't need to buy a thing. We supply premium lights, install them, and store them for next year.",
       },
       {
         number: "04.",
         title: "Save Time – Enjoy the Holidays",
-        text: "Free up your time and energy. We’ll take care of everything start to finish",
+        text: "Free up your time and energy. We'll take care of everything start to finish",
       },
     ],
     nearyou: [
@@ -955,12 +955,12 @@ const Services = {
       },
     ],
   },
-  high_dusting: {
+  "high-dusting": {
     hero: [
       "High",
       "Dusting",
       service12,
-      "Dirty solar panels reduce energy efficiency by blocking sunlight absorption. Our solar panel cleaning service ensures maximum performance by carefully removing all of nature’s buildup that can affect energy output. Regular cleaning helps maintain optimal energy production.",
+      "Dirty solar panels reduce energy efficiency by blocking sunlight absorption. Our solar panel cleaning service ensures maximum performance by carefully removing all of nature's buildup that can affect energy output. Regular cleaning helps maintain optimal energy production.",
     ],
     included: [
       {
